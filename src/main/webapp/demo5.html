@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>学习事件鼠标移动和阻止</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+		<!--
+		    任务5
+		       学习学习事件鼠标移动和阻止v-on:mouseover
+
+		-->
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 300px;
+				background-color: dodgerblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div v-on:mouseover="fun1" id="div">
+				<textarea v-on:mouseover="fun2($event)">这是一个文本区域</textarea>
+			</div>
+			<!--以"@"简写模式-->
+			<!--<div @mouseover="fun1" id="div">-->
+				<!--<textarea @mouseover="fun2($event)">这是一个文本区域</textarea>-->
+			<!--</div>-->
+		</div>
+	</body>
+	<script>
+		//view model //表示当前vue接管了div区域
+		//创建vue对象
+		new Vue({
+			el:"#app",
+			methods:{
+			    fun1:function () {
+					alert("整个大区域的div")
+                },
+                fun2:function (event) {
+                    alert("textarea");
+                    event.stopPropagation();//阻止冒泡
+                }
+			}
+		});
+	</script>
+</html>

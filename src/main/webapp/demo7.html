@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>按键修饰符</title>
+	<script src="js/vuejs-2.5.16.js"></script>
+	<!--
+	    任务7
+	       学习按键修饰符
+	       .enter  回车键
+	       .tab
+	       .delete 删除键或者退格键
+	       ......
+	-->
+
+	<!--样式修饰-->
+	<style type="text/css">
+		body{
+			background-color: dodgerblue;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<!--enter回车键-->
+		<input v-on:keyup.enter="fun1" type="submit" value="提交" /><br/>
+		<!--delete删除键-->
+		<input v-on:keyup.delete="fun2" type="text" value="删除" /><br/>
+		<!--space删除键-->
+		<input v-on:keyup.space="fun3" type="text" value="空格" /><br/>
+	</div>
+</body>
+<script>
+    //view model 视图和数据区域
+	//创建vue对象
+	new Vue({
+		el:"#app",//表示当前vue接管了div区域
+		methods:{ //表示的当前方法  可定义多个方法
+		    fun1:function(){
+				alert("你按了enter回车键!");
+            },
+			fun2:function(){
+				alert("你按了delete删除键!");
+			},
+            fun3:function(){
+                alert("你按了space空格键!");
+            }
+		}
+	});
+</script>
+</html>

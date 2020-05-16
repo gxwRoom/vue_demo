@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>事件修饰符</title>
+	<script src="js/vuejs-2.5.16.js"></script>
+	<!--
+        任务7
+           学习事件修饰符
+            .stop
+            .prevent
+            .captrue
+            .self
+            .once
+    -->
+</head>
+<body>
+<div id="app">
+	<!--创建表单区域-->
+	<form @submit.prevent action="http://www.itcast.cn" method="post">
+		<input type="submit" value="提交"/>
+	</form>
+
+	<div @click="fun">
+		<a @click.stop href="http://www.itcast.cn">itcast</a>
+	</div>
+</div>
+</body>
+<script>
+    //view model  //表示当前vue接管了div区域
+    //创建vue对象
+    new Vue({
+        el:"#app",
+        methods:{
+            fun:function () {
+                alert("点击链接itcast");
+            }
+        }
+    });
+</script>
+</html>
+

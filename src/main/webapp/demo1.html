@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>快速入门</title>
+	<!--引入vue.js-->
+	<script src="js/vuejs-2.5.16.js"></script>
+	<!--
+	    任务1：
+	       快速入门，并完成插值表达式练习(双大括号{{}}表示)
+	-->
+</head>
+<body>
+	<div id="app">
+		<!--插值表达式使用符号双大括号{{}}-->
+		{{message}}
+
+		<!--是否支持三元运算符呢？--是支持-->
+		{{ ok ? "YES" : "NO" }}
+
+		<!--是否支持数学运算符呢？--是支持-->
+		{{number*3.14}}
+
+	</div>
+</body>
+<script>
+	//view model 视图和数据的区域
+	//创建vue对象
+	new Vue({
+		el:"#app",//el:用于抓取id选择器，同时，表示当前vue接管了div区域
+		data:{
+		    message:"hello vue!",
+			number:100//注意最后一行区域不要加上分号";"
+		}
+	});
+</script>
+</html>

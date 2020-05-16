@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>v-text 与 v-html</title>
+	<script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div v-text="message"></div>
+		<div v-text="message"></div>
+	</div>
+</body>
+<script>
+	//view model 视图和数据区域
+	//创建vue对象
+	new Vue({
+		el:"#app",//表示当前vue接管了div区域
+		data:{ //表示当前数据显示
+		    message:[
+		        {id:1,name:"张三"},
+                {id:2,name:"李四"}
+			] //此处不要加分号
+		}
+	});
+</script>
+</html>

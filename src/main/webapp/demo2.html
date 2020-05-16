@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>学习Vue常用系统指令</title>
+	<script src="js/vuejs-2.5.16.js"></script>
+	<!--
+	    任务2：
+	       1.v-on:click 绑定点击事件
+	       2.v-on: 与 @ 的作用相同
+	         方式1
+	            v-on:click
+	         方式2
+	            @click
+	-->
+</head>
+<body>
+	<div id="app">
+		{{message}}
+		<!--方式1-->
+		<button v-on:click="fun()">点击改变</button>
+		<!--方式2-->
+		<button @click="fun('第二种方式改变：学习Vue!')">点击改变</button>
+	</div>
+</body>
+<script>
+	//view model 视图和数据的区域
+    //创建vue对象
+	new Vue({
+		el:"#app",//el:用于抓取id选择器，同时，表示当前vue接管了div区域
+        data:{
+           message:"hello vue!" //原来message中的内容
+		},
+		methods:{
+            fun:function (msg) {
+                msg = "方式1：我要把内容改为学习Vue框架！";
+                this.message = msg;//改变原来的内容
+            }
+//			fun:function (msg) {
+//				this.message = msg = "方式1：我要把内容改为学习Vue框架！";
+//            }
+		}
+	});
+
+</script>
+</html>

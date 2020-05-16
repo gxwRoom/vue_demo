@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>v-model</title>
+	<script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+	<div id="app">
+		姓名:<input type="text" id="username" v-model="user.username"/><br>
+		密码:<input type="password" id="password" v-model="user.password"/><br>
+		<input type="button" v-on:click="funBtn" value="获取数据"/>
+	</div>
+</body>
+<script>
+	//view model 视图和数据区域
+	//创建vue对象
+	new Vue({
+		el:"#app",//表示当前vue接管了div区域
+		data:{
+			user:{ //定义两个变量，并且设置原有的数据为空
+				username:"",
+				password:""
+			}
+		},
+		methods:{ //当前调用的方法
+			funBtn:function(){
+			    //刚开始数据是空的，所以打印出来的也是空的；后来才获取到数据
+				alert(this.user.username+"  "+this.user.password);
+				this.user.username = "张三";
+				this.user.password = "123456";
+			}
+//			funBtn:function(){
+//				alert(this.user.username+"  "+this.user.password);
+//                name="张三";
+//                pwd="123456";
+//                this.user.username = name;
+//                this.user.password = pwd;
+//            }
+		}
+	});
+</script>
+</html>

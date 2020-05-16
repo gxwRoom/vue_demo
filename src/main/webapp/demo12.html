@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>v-for循环遍历操作数组</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<table border="1px" style="text-align: center">
+				<h1>学生信息表</h1>
+				<tr>
+					<td>编号</td>
+					<td>姓名</td>
+					<td>班级</td>
+					<td>学号</td>
+				</tr>
+				<tr v-for="user in userList">
+					<!--使用插值表达式进行遍历数据-->
+					<td>{{user.id}}</td>
+					<td>{{user.name}}</td>
+					<td>{{user.grade}}</td>
+					<td>{{user.stuNo}}</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script>
+		//view model 视图和数据区域
+		//创建vue对象
+		new Vue({
+			el:"#app",
+			data:{
+			    userList:[
+					{id:1,name:"张三",grade:"应数161",stuNo:"20160345"},
+                    {id:2,name:"李四",grade:"应数162",stuNo:"20160112"},
+                    {id:3,name:"王五",grade:"应统161",stuNo:"20163839"},
+                    {id:4,name:"小红",grade:"应统162",stuNo:"20163847"}
+				]
+			}
+		});
+	</script>
+</html>
